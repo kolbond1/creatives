@@ -176,6 +176,9 @@ html,body{
    }
 }
 @media(max-width:767px){
+   .top{
+      
+   }
    .header__solink.active{
       display: none;
       
@@ -371,6 +374,9 @@ html,body{
    }
 }
 @media(max-width:767px){
+   .loft{
+      transform: translate(0, 100%);
+   }
    .loft__subtitle{
       letter-spacing: 10px;
    }
