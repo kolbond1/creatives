@@ -122,19 +122,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------*/
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+
 .top {
   background: url(../img/bg.png) 0 0/cover no-repeat;
-  height: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .container {
   max-width: 1230px;
   margin: 0 auto;
   padding: 0 15px;
+  width: 100%;
 }
 
 .header {
-  position: fixed;
+  position: relative;
   width: 100%;
   top: 0;
   left: 0;
@@ -265,6 +291,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: -24px 0px 0px -5px;
   }
   .header {
+    position: fixed;
     background-color: #2e85aa;
   }
   .header__body {
@@ -361,7 +388,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Gotham-Bold';
   font-size: 152px;
   text-align: center;
-  padding: 260px 0px 0px 0px;
+  padding: 100px 0px 0px 0px;
 }
 
 .loft__subtitle {
@@ -373,7 +400,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-.loft__scroll {
+.scroll__text {
   color: #fff;
   font-family: 'Open Sans', sans-serif;
   font-size: 13px;
@@ -383,17 +410,27 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.8s;
 }
 
-.loft__scroll:hover {
+.scroll__text:hover {
   -webkit-transform: translate(0px, -7px);
           transform: translate(0px, -7px);
 }
 
-.loft__btn {
+.scroll__btn {
+  -webkit-animation-name: ku;
+          animation-name: ku;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
   display: block;
   padding: 0px 0px 109px 0px;
 }
 
-.loft__btn img {
+.scroll__btn img {
   display: block;
   margin: 22px auto 0px auto;
   padding: 25px;
@@ -403,9 +440,26 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.loft__btn img:hover {
-  -webkit-transform: translate(0px, 15px);
-          transform: translate(0px, 15px);
+@-webkit-keyframes ku {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 16px);
+            transform: translate(0px, 16px);
+  }
+}
+
+@keyframes ku {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 16px);
+            transform: translate(0px, 16px);
+  }
 }
 
 @media (max-width: 1200px) {
@@ -423,7 +477,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .loft__title {
     font-size: 114px;
-    padding: 220px 0px 0px 0px;
+    padding: 100px 0px 0px 0px;
   }
   .loft__subtitle {
     font-size: 2vw;
@@ -450,7 +504,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 3.5vw;
   }
   .loft__title {
-    padding: 140px 0px 0px 0px;
+    padding: 100px 0px 0px 0px;
   }
   .loft__scroll {
     padding: 90px 0px 0px 0px;
@@ -892,7 +946,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .akita {
   padding: 100px 0px 100px 0px;
-  background: url("/img/bg__ipone.png") 0 0/cover no-repeat;
+  background: url("../img/bg__ipone.png") 0 0/cover no-repeat;
 }
 
 .akita__row {

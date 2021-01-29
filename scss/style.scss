@@ -51,20 +51,30 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 /*--------------------*/
 
-
+html,body{
+   height: 100%;
+}
 .wrapper {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
 }
 .top {
    background: url(../img/bg.png) 0 0/cover no-repeat;
-   height: 100%;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   
 }
 .container {
    max-width: 1230px;
    margin: 0 auto;
    padding: 0 15px;
+   width: 100%;
 }
 .header {
-   position: fixed;
+   position: relative;
    width: 100%;
    top: 0;
    left: 0;
@@ -180,6 +190,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
    }
 
    .header{
+      position: fixed;
       background-color: #2e85aa;
       &__body{
          height: 70px;
@@ -280,7 +291,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
       font-family: 'Gotham-Bold';
       font-size: 152px;
       text-align: center;
-      padding: 260px 0px 0px 0px; 
+      padding: 100px 0px 0px 0px; 
       
       
    }
@@ -294,37 +305,48 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
       text-align: center;
    }
 
-   &__scroll {
+}
+.scroll {
+
+   &__text {
       color: #fff;
       font-family: 'Open Sans', sans-serif;
       font-size: 13px;
       text-align: center;
       padding: 119px 0px 0px 0px; 
       transition: all 0.8s ;
-   }
-   &__scroll:hover{
-      transform: translate(0px, -7px);
+      &:hover{
+         transform: translate(0px, -7px);
+      }
    }
 
-   &__btn{
+   &__btn {
+      animation-name: ku;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
       display: block;
       padding: 0px 0px 109px 0px; 
-      
+      & img{
+         display: block;
+         margin: 22px auto 0px auto;
+         padding: 25px;
+         border: 1px solid #fff;
+         border-radius: 50%;
+         transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      }
+}
+}
+@keyframes ku{
+   0%{
+      transform: translate(0px, 0px);
    }
-   &__btn img{
-      display: block;
-      margin: 22px auto 0px auto;
-      padding: 25px;
-      border: 1px solid #fff;
-      border-radius: 50%;
-      transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-      
-   }
-   &__btn img:hover{
-      transform: translate(0px, 15px);
+   100%{
+      transform: translate(0px, 16px);
    }
 }
-
 @media(max-width:1200px){
    .container{
       max-width: 970px;
@@ -341,7 +363,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
    }
    .loft__title{
       font-size: 114px;
-      padding: 220px 0px 0px 0px; 
+      padding: 100px 0px 0px 0px; 
       
    }
    .loft__subtitle{
@@ -371,7 +393,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
    }
    .loft__title{
       
-      padding: 140px 0px 0px 0px; 
+      padding: 100px 0px 0px 0px; 
       
    }
    .loft__scroll{
@@ -796,7 +818,7 @@ position: relative;
 .akita {
    padding: 100px 0px 100px 0px; 
    
-background: url('/img/bg__ipone.png') 0 0/cover no-repeat ;
+background: url('../img/bg__ipone.png') 0 0/cover no-repeat ;
    &__row {
       display: flex;
       flex-wrap: wrap;
